@@ -1,2 +1,31 @@
-ColdBlue
-========
+STV2
+====
+
+
+Network discovery, health monitoring, and host listing app.
+
+Written in Python, node.js, and Angularjs. Uses MongoDB.
+
+-index.html             # the main HTML shindig
+-server.js              # node server app
+- img
+--- asti.png            # logo
+--- asti2.png           # logo2
+- css
+--- style.css           # stylesheet for index.html
+- js
+--- angular.js          # core angular   
+--- angular-modules.js  # angular app, controllers and such
+- scripts
+--- magellan.py         # auto-discovery script
+--- magellan_conf       # config for auto-discovery 
+--- cambridge.py        # known-hosts scanner and health monitor
+--- cambrige_conf       # config for known-hosts scanner
+--- sweeper.py          # cleanup script (culls logs, old hosts, etc.)
+--- import.py           # bulk .csv import
+--- logfile             # logfile...did you really need a comment for that?
+--- resources
+------ scanfile         # resource used by python scripts
+------ scanlist         # resource used by python scrupts
+------ 0255             # numbers 0-255 for appending to IP address middle octets
+------ 1254             # numbers 1-254 for appending to IP address final octets
