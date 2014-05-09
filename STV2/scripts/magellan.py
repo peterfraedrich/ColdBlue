@@ -170,48 +170,54 @@ if recompile == False :
                 # set ping-loop iterator
                 ploop = 1
                 presult = 0
-                # PING ALL OF THE THINGS 5 TIMES!!!!!
-                while ploop < 6 :
-                    ipaddr = each
-                    print ipaddr
-                    response = os.system("ping -W 3 -c 1 " + ipaddr + " > /dev/null 2>&1")
-                    if response == 0:
-                        ping += 1
-                        presult += 1
-                    else:
-                        pingfail += 1
-                        ping += 1
-                    ploop += 1
-                if presult > 3 :
-                    alive = True
-                    pct = (100 - int((float(pingfail)/float(ping))*100))
-                    health = pct
-                    try :
-                        hostname_long = socket.gethostbyaddr(ipaddr)
-                        hostname = hostname_long[0]
-                    except :
-                        hostname = ""
-                    discovery_date = str(datetime.now().strftime("%m/%d/%Y %H:%M:%S"))
-                    save_item = ({
-                        "ipaddr": ipaddr,
-                        "hostname": hostname,
-                        "user": "system discovery",
-                        "added": discovery_date,
-                        "alive": "True",
-                        "ping": ping,
-                        "pingfail": pingfail,
-                        "health": health,
-                        "lastscan": discovery_date,
-                        "reserved": "False",
-                        "tidyflag": "False",
-                        "lastalive": discovery_date,
-                        "login": "unknown",
-                        "subnet": "unknown",
-                        "vlan": "10"
-                        })
-                    print save_item
-                    coll.insert(save_item)
-                    added = added + 1
+                
+                # pre-checker
+                ud = os.system("ping -w1 -c1 " + each + " > /dev/null 2>&1")
+
+                if ud == 1:
+                    # PING ALL OF THE THINGS 5 TIMES!!!!!
+                    while ploop < 6 :
+                        ipaddr = each
+                        print ipaddr
+                        response = os.system("ping -W 3 -c 1 " + ipaddr + " > /dev/null 2>&1")
+                        if response == 0:
+                            ping += 1
+                            presult += 1
+                        else:
+                            pingfail += 1
+                            ping += 1
+                        ploop += 1
+                    if presult > 3 :
+                        alive = True
+                        pct = (100 - int((float(pingfail)/float(ping))*100))
+                        health = pct
+                        try :
+                            hostname_long = socket.gethostbyaddr(ipaddr)
+                            hostname = hostname_long[0]
+                        except :
+                            hostname = ""
+                        discovery_date = str(datetime.now().strftime("%m/%d/%Y %H:%M:%S"))
+                        save_item = ({
+                            "ipaddr": ipaddr,
+                            "hostname": hostname,
+                            "user": "system discovery",
+                            "added": discovery_date,
+                            "alive": "True",
+                            "ping": ping,
+                            "pingfail": pingfail,
+                            "health": health,
+                            "lastscan": discovery_date,
+                            "reserved": "False",
+                            "tidyflag": "False",
+                            "lastalive": discovery_date,
+                            "login": "unknown",
+                            "subnet": "unknown",
+                            "vlan": "10"
+                            })
+                        print save_item
+                        coll.insert(save_item)
+                        added = added + 1
+
 
     # write results to log
     f = open('/stv2/scripts/logfile','a')

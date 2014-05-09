@@ -184,25 +184,7 @@ while i < rows :
     
 
     # save to DB
-    coll.update({
-        "_id":result['_id']},
-        {$set:{
-        "ipaddr": ip,
-        "hostname": hostname,
-        "user": user,
-        "added": added,
-        "alive": alive,
-        "ping": ping,
-        "pingfail": pingfail,
-        "health": health,
-        "lastscan": lastscan,
-        "reserved": reserved,
-        "tidyflag": tidyflag,
-        "lastalive": lastalive,
-        "login": login,
-        "subnet": subnet,
-        "vlan": vlan
-        }})
+    coll.update( {"_id":result['_id'] } , { "$set": { "ipaddr": ip, "hostname": hostname, "user": user, "added": added, "alive": alive, "ping": ping, "pingfail": pingfail, "health": health, "lastscan": lastscan, "reserved": reserved, "tidyflag": tidyflag, "lastalive": lastalive, "login": login, "subnet": subnet, "vlan": vlan } } ) 
 
     # increment iterator 
     i += 1
