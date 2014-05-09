@@ -16,7 +16,7 @@ import datetime
 from datetime import datetime
 
 # write to log @ start
-f = open('logfile','a')
+f = open('/stv2/scripts/logfile','a')
 f.write(str(datetime.now().strftime("%m/%d/%Y %H:%M:%S")) + " : Cambridge started successfully.\n")
 f.close()
 
@@ -67,7 +67,7 @@ if imode == True :
 
 
 ######### import options from config file
-optionfile = [line.strip() for line in open('cambridge_conf')]
+optionfile = [line.strip() for line in open('/stv2/scripts/cambridge_conf')]
 
 # check for enterprise lic
 if optionfile[1] == "4444026290" :
@@ -184,8 +184,9 @@ while i < rows :
     
 
     # save to DB
-    coll.save({
-        "_id":result['_id'],
+    coll.update({
+        "_id":result['_id']},
+        {$set:{
         "ipaddr": ip,
         "hostname": hostname,
         "user": user,
@@ -201,14 +202,14 @@ while i < rows :
         "login": login,
         "subnet": subnet,
         "vlan": vlan
-        })
+        }})
 
     # increment iterator 
     i += 1
 
 
 # write to log @ start
-f = open('logfile','a')
+f = open('/stv2/scripts/logfile','a')
 f.write(str(datetime.now().strftime("%m/%d/%Y %H:%M:%S")) + " : Cambridge seccussfully scanned " + str(rows) + " hosts.\n")
 f.close()
 

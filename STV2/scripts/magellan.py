@@ -38,7 +38,7 @@ if len(sys.argv) > 1 :
         sys.exit() 
 
 # write to log @ start
-f = open('logfile','a')
+f = open('/stv2/scripts/logfile','a')
 f.write(str(datetime.now().strftime("%m/%d/%Y %H:%M:%S")) + " : Magellan started successfully.")
 if recompile == True :
     f.write(" Starting in recompile mode.\n")
@@ -47,8 +47,8 @@ else :
 f.close()
 
 ######### import options from config file
-optionfile = [line.strip() for line in open('cambridge_conf')]
-magellanfile = [line.strip() for line in open('magellan_conf')]
+optionfile = [line.strip() for line in open('/stv2/scripts/cambridge_conf')]
+magellanfile = [line.strip() for line in open('/stv2/scripts/magellan_conf')]
 
 # check for enterprise lic
 if optionfile[1] == "4444026290" :
@@ -72,18 +72,18 @@ coll = db.hosts
 if recompile == True :
 
     # write to log @ start
-    f = open('logfile','a')
+    f = open('/stv2/scripts/logfile','a')
     f.write(str(datetime.now().strftime("%m/%d/%Y %H:%M:%S")) + " : Magellan started re-compiling the scanlist.\n")
     f.close()
 
     # clear scanlist file
-    scanlist = open('resources/scanlist', 'w')
+    scanlist = open('/stv2/scripts/resources/scanlist', 'w')
     scanlist.write("")
     scanlist.close()
 
     # load resources into mem as vars
-    ip_24 = [line.strip() for line in open('resources/1254')]
-    ip_8 = [line.strip() for line in open('resources/0255')]
+    ip_24 = [line.strip() for line in open('/stv2/scripts/resources/1254')]
+    ip_8 = [line.strip() for line in open('/stv2/scripts/resources/0255')]
 
     # get number of subnets
     subnets = len(magellanfile)
@@ -105,7 +105,7 @@ if recompile == True :
             each[0] = each[0].split(".")[0]+"." + each[0].split(".")[1] +"."+ each[0].split(".")[2]+"."
             for line in ip_24 :
                 ipaddr = each[0] + str(line) + "\n"
-                scanlist = open('resources/scanlist', 'a')
+                scanlist = open('/stv2/scripts/resources/scanlist', 'a')
                 scanlist.write(ipaddr)
                 scanlist.close()
 
@@ -115,7 +115,7 @@ if recompile == True :
             for line in ip_8 :
                 for line2 in ip_24:
                     ipaddr = each[0] + line + "." + line2 + "\n"
-                    scanlist = open('resources/scanlist', 'a')
+                    scanlist = open('/stv2/scripts/resources/scanlist', 'a')
                     scanlist.write(ipaddr)
                     scanlist.close()
 
@@ -126,19 +126,19 @@ if recompile == True :
                 for line2 in ip_8:
                     for line3 in ip_24:
                         ipaddr = each[0] + line + "." + line2 + "." + line3 + "\n"
-                        scanlist = open('resources/scanlist', 'a')
+                        scanlist = open('/stv2/scripts/resources/scanlist', 'a')
                         scanlist.write(ipaddr)
                         scanlist.close()
 
         elif each[1] == "32" :
             # if subnet = 32, wite IP to file
-            scanlist = open('resources/scanlist', 'a')
+            scanlist = open('/stv2/scripts/resources/scanlist', 'a')
             scanlist.write(each[0] + "\n")
             scanlist.close()
 
         else:
             # write err to log
-            f = open('logfile','a')
+            f = open('/stv2/scripts/logfile','a')
             f.write(str(datetime.now().strftime("%m/%d/%Y %H:%M:%S")) + " : Magellan could not scan, invalid subnet. Check your magellan_conf file.\n")
             f.close()
 
@@ -148,7 +148,7 @@ if recompile == True :
 if recompile == False :
     
     # get the list of hosts to scan
-    iplist = [line.strip() for line in open('resources/scanlist')]
+    iplist = [line.strip() for line in open('/stv2/scripts/resources/scanlist')]
 
     # do the thing
     for each in iplist :
@@ -214,7 +214,7 @@ if recompile == False :
                     added = added + 1
 
     # write results to log
-    f = open('logfile','a')
+    f = open('/stv2/scripts/logfile','a')
     f.write(str(datetime.now().strftime("%m/%d/%Y %H:%M:%S")) + " : Magellan scanned " + str(scanned) + " IP's and added " + str(added) + " IP's.\n")
     f.close()
 

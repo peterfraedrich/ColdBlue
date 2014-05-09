@@ -15,22 +15,22 @@ import datetime
 from datetime import datetime
 
 # clean up logs
-with open("logfile") as l:
+with open("/stv2/scripts/logfile") as l:
     lines = sum(1 for line in l)
 if lines > 500 :
     cmd = "cp logfile logfile"+str(datetime.now().strftime("%m%d%Y-%H%M%S"))
     os.system(cmd)
-    c = open('logfile', 'w')
+    c = open('/stv2/scripts/logfile', 'w')
     c.write(str(datetime.now().strftime("%m/%d/%Y %H:%M:%S")) + " : Sweeper cleaned up the logs.")
     c.close
 
 # write to log @ start
-f = open('logfile','a')
+f = open('/stv2/scripts/logfile','a')
 f.write(str(datetime.now().strftime("%m/%d/%Y %H:%M:%S")) + " : Sweeper started successfully.\n")
 f.close()
 
 ######### import options from config file
-optionfile = [line.strip() for line in open('cambridge_conf')]
+optionfile = [line.strip() for line in open('/stv2/scripts/cambridge_conf')]
 
 # check for enterprise lic
 if optionfile[1] == "4444026290" :
@@ -82,7 +82,7 @@ for each in obj_id :
     number_deleted = number_deleted + 1   
 
 # write to log @ end
-f = open('logfile','a')
+f = open('/stv2/scripts/logfile','a')
 if number_deleted == 0 :
     f.write(str(datetime.now().strftime("%m/%d/%Y %H:%M:%S")) + " : Sweeper had nothing to do.\n")
 else:
