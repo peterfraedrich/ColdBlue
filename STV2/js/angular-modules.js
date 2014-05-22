@@ -110,7 +110,7 @@ app.controller('servList', function($scope, $http, $templateCache) {
         var formdata = {
             ipaddr: $scope.editIpaddr,
             alive: 'true',
-            health: '100%',
+            health: '100',
             ping: '0',
             pingfail: '0',
             lastscan: '',
