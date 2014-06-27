@@ -132,8 +132,11 @@
                                 <tr><td><input name="hostname" ng-model="hostname" type="text" class="add-text" placeholder="Hostname"></tr></td>
                                 <tr><td><input name="subnet" ng-model="subnet" type="text" class="add-text" placeholder="Subnet (ex. 255.255.0.0)"></tr></td>
                                 <tr><td><input name="vlan" ng-model="vlan" type="text" class="add-text" placeholder="VLAN"></tr></td>
-                                <tr><td><input name="vp" ng-model="vp" type="radio" class="add-radio" value="physical">Physical</br>
-                                        <input name="vp" ng-model="vp" type="radio" class="add-radio" valie="virtual">Virtual</br></tr></td>
+                                <tr><td><select name="vp" ng-model="vp" class="dropdown">
+                                        <option value="physical">Physical</option>
+                                        <option value="virtual">Virutal</option></select></tr></td>
+                                <!--<tr><td><input name="vp" ng-model="vp" type="radio" class="add-radio" value="physical">Physical</br>
+                                        <input name="vp" ng-model="vp" type="radio" class="add-radio" valie="virtual">Virtual</br></tr></td> -->
                                 <tr><td><input name="virthost" ng-model="virthost" type="text" class="add-text" placeholder="Virtual Host"></td></tr>
                                 <tr><td><input name="location" ng-model="location" type="text" class="add-text" placeholder="Location"></td></tr>
                                 <tr><td><input name="login" ng-model="login" type="text" class="add-text" placeholder="Login"></td></tr>
@@ -174,7 +177,7 @@
                             <tr class="tablehover" ng-repeat="row in servers | orderBy: 'ipaddr' | filter:search">
                                 <td class="td-ipaddr">{{ row.ipaddr }}</td>
                                 <td class="td-hostname">{{ row.hostname }}</td>
-                                <td class="td-health">{{ row.health }}</td>
+                                <td class="td-health health-class">{{ row.health }}</td>
                                 <td class="td-subnet">{{ row.subnet }}</td>
                                 <td class="td-vlan">{{ row.vlan }}</td>
                                 <td class="td-vp">{{ row.vp }}</td>
@@ -184,8 +187,8 @@
                                 <td class="td-svcs">{{ row.services }}</td>
                                 <td class="td-user">{{ row.user }}</td>
                                 <td class="td-reserved">{{ row.reserved }}</td>
-                                <td class="td-dateadded">{{ row.dateadded }}</td>
-                                <td class="td-lastalive">{{ row.lastalive }}</td>
+                                <td class="td-dateadded">{{ row.lastalive }}</td>
+                                <td class="td-lastalive">{{ row.dateadded }}</td>
                                 <td class="td-edit"><input id="editbtn" class="button-class" name="editbtn" ng-model="editBtn" type="button" value="Edit" ng-click="edit(row)"></td>
                                 <td class="td-delete"><input id="deletebtn" class="button-class" name="deletemtn" type="button" value="Delete" ng-click="delete(row)"></td>
                             </tr>
