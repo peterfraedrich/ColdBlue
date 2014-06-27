@@ -218,6 +218,13 @@ body {
 
 }
 
+#vpdropdown {
+
+    width: 155px;
+    height: 20px;
+
+}
+
 .add-radio {
 
     border: none;
