@@ -14,7 +14,9 @@
     "debug": "~0.7.4",
     "method-override": "~1.0.0",
     "mongodb": "*",
-    "errorhandler": "~1.0.0"
+    "errorhandler": "~1.0.0",
+    "connect": "*",
+    "mongojs": "*"
   }
 }
 
