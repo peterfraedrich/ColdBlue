@@ -163,6 +163,7 @@ app.controller('servList', function($scope, $http, $templateCache) {
         $scope.search.user = '';
         $scope.search.vp = '';
         $scope.search.virthost = '';
+        $scope.search.reserved = '';
 
     };
 

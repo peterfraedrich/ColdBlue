@@ -77,9 +77,14 @@ while i < rows :
     i += 1
 
 # iterate through obj_id list and delete flagged hosts / deleting directly causes index errors in mongo
+#for each in obj_id :
+#    coll.remove({"ipaddr": each})
+#    number_deleted = number_deleted + 1   
+print obj_id
+
 for each in obj_id :
-    coll.remove({"ipaddr": each})
-    number_deleted = number_deleted + 1   
+    print 'ipaddr: ' + each + '\n'
+    number_deleted = number_deleted + 1
 
 # write to log @ end
 f = open('/stv2/scripts/logfile','a')

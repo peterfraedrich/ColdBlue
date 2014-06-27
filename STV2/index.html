@@ -118,6 +118,14 @@
                                     </select>
                                 </td>
                             </tr>
+                             <tr>
+                                <td>Reserved</td>
+                                <td><select class="dropdown" ng-model="search.reserved">
+                                    <option value=''></option>
+                                    <option ng-repeat="row in servers | unique:'reserved'">{{ row.reserved }}</option>
+                                    </select>
+                                </td>
+                            </tr>
                             <tr>
                                 <td></td>
                                 <td><input type="button" value="Clear Filters" ng-click="clearfilters()" id="clear-btn" class="button-class"></td>
@@ -132,11 +140,11 @@
                                 <tr><td><input name="hostname" ng-model="hostname" type="text" class="add-text" placeholder="Hostname"></tr></td>
                                 <tr><td><input name="subnet" ng-model="subnet" type="text" class="add-text" placeholder="Subnet (ex. 255.255.0.0)"></tr></td>
                                 <tr><td><input name="vlan" ng-model="vlan" type="text" class="add-text" placeholder="VLAN"></tr></td>
-                                <tr><td><select name="vp" ng-model="vp" class="dropdown" id="vpdropdown">
-                                        <option value="physical">Physical</option>
-                                        <option value="virtual">Virutal</option></select></tr></td>
-                                <!--<tr><td><input name="vp" ng-model="vp" type="radio" class="add-radio" value="physical">Physical</br>
-                                        <input name="vp" ng-model="vp" type="radio" class="add-radio" valie="virtual">Virtual</br></tr></td> -->
+                                <tr><td>Virt/Phys
+                                        <select name="vp" ng-model="vp" class="dropdown" id="vpdropdown">
+                                        <option value="physical" selected>Physical</option>
+                                        <option value="virtual">Virutal</option>
+                                        </select></td></tr>
                                 <tr><td><input name="virthost" ng-model="virthost" type="text" class="add-text" placeholder="Virtual Host"></td></tr>
                                 <tr><td><input name="location" ng-model="location" type="text" class="add-text" placeholder="Location"></td></tr>
                                 <tr><td><input name="login" ng-model="login" type="text" class="add-text" placeholder="Login"></td></tr>

@@ -220,8 +220,16 @@ body {
 
 #vpdropdown {
 
-    width: 155px;
-    height: 20px;
+    width: 112px;
+    border: collapse;
+
+}
+
+#vptable {
+
+    width: 172px;
+    padding: 5px;
+    color: #FFF;
 
 }
 

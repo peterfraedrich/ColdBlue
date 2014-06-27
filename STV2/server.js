@@ -42,7 +42,7 @@
             //str='[';
             str='['
             ipaddr.forEach( function(row) {
-                str = str + '{ "ipaddr" : "' + row.ipaddr + '", "hostname" : "' + row.hostname + '", "reserved" : "' + row.reserved + '", "user" : "' + row.user + '", "added" : "' + row.added + '", "health" : "' + row.health + '", "lastalive" : "' + row.lastalive + '", "login" : "' + row.login + '", "subnet" : "' + row.subnet + '", "vlan" : "' + row.vlan + '", "services" : "' + row.services+ '", "vp" : "' + row.vp + '", "virthost" : "' + row.virthost + '", "location" : "' + row.location + '"}' + ',\n';
+                str = str + '{ "ipaddr" : "' + row.ipaddr + '", "hostname" : "' + row.hostname + '", "reserved" : "' + row.reserved + '", "user" : "' + row.user + '", "added" : "' + row.added + '", "health" : "' + row.health + '", "lastalive" : "' + row.lastalive + '", "login" : "' + row.login + '", "subnet" : "' + row.subnet + '", "vlan" : "' + row.vlan + '", "services" : "' + row.services+ '", "vp" : "' + row.vp + '", "virthost" : "' + row.virthost + '", "location" : "' + row.location + '", "lastscan" : "' + row.lastscan + '"}' + ',\n';
             });
             str = str.trim();
             str = str.substring(0,str.length-1);
