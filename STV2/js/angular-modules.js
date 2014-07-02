@@ -68,6 +68,12 @@ app.controller('servList', function($scope, $http, $templateCache) {
 
     };
 
+    $scope.viewSave = function() {
+
+        $scope.viewhide();
+
+    };
+
     $scope.saveEdit = function () {
 
         date = new Date().toJSON().slice(0,10);
