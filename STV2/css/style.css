@@ -543,6 +543,14 @@ th {
 
 }
 
+.view-show {
+    display: block;
+}
+
+.view-hide {
+    display: none;
+}
+
 .view-th {
 
     width: 150px;
