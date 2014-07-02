@@ -232,32 +232,32 @@ app.controller('servList', function($scope, $http, $templateCache) {
 
         /// check to see if fields are null & fix 
         if ($scope.hostname == null) {
-            $scope.hostname = " "
+            $scope.hostname = ""
         };
         if ($scope.subnet == null) {
-            $scope.subnet = " "
+            $scope.subnet = ""
         };
         if ($scope.vlan == null) {
-            $scope.vlan = " "
+            $scope.vlan = ""
         };
         if ($scope.vp == null) {
             $scope.vp = "physical"
         };
         
         if ($scope.virthost == null) {
-            $scope.virthost = " "
+            $scope.virthost = ""
         };
         if ($scope.location == null) {
-            $scope.location = " "
+            $scope.location = ""
         };
         if ($scope.login == null) {
-            $scope.login = " "
+            $scope.login = ""
         };
         if ($scope.services == null) {
-            $scope.services = " "
+            $scope.services = ""
         };
         if ($scope.user == null) {
-            $scope.user = " "
+            $scope.user = ""
         };
         if ($scope.reserved == null) {
             $scope.reserved = "false"
