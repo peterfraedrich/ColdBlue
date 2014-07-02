@@ -106,7 +106,7 @@ body {
     overflow: scroll;
     overflow-x: hidden;
     width: 100%;
-    height: 800px;
+    height: 812px;
     font-family: Helvetica, Arial, sans-serif;
     font-size: 0.7em;
     background-color: rgba(255,255,255,0.95);
@@ -522,7 +522,7 @@ th {
     font-size: 0.7em;
     background-attachment: fixed;
 
-    
+
     display: none;
 
 }
@@ -625,12 +625,13 @@ th {
 
 #view {
 
-    padding-left: 10px;
-    padding-top: 10px;
+    padding: 10px;
 }
 
 #viewbtn {
 
     width: 85px;
+    background-color: #666;
+
 
 }
