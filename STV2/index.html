@@ -256,7 +256,7 @@
                                 <th class="td-edit">Delete</th>
                             </tr>
                             <tr class="tablehover" ng-repeat="row in servers | orderBy: 'ipaddr' | filter:search">
-                                <td class="td-ipaddr">{{ row.ipaddr }}</td>
+                                <td class="td-ipaddr" ng-class="{ 'ip-show': !iphide, 'ip-hide': iphide }">{{ row.ipaddr }}</td>
                                 <td class="td-hostname">{{ row.hostname }}</td>
                                 <td class="td-health health-class">{{ row.health }}</td>
                                 <td class="td-subnet">{{ row.subnet }}</td>
