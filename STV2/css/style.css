@@ -503,3 +503,103 @@ th {
     border: none;
 
 }
+
+#viewbtn {
+
+    width: 100px;
+    border: none;
+}
+
+#view-overlay {
+
+    /*border: 1px solid red;*/
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 100;
+    background-color: rgba(0,0,0,0.6);
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 0.7em;
+    background-attachment: fixed;
+
+}
+
+#view-center-div {
+
+    /*border: 1px solid green;*/
+
+}
+
+.view-th {
+
+    width: 150px;
+    line-height: 20px;
+    text-align: center;
+    margin-top: 10px;
+    background-color: #555;
+    color: #FFF;
+
+}
+
+.view-td {
+
+    padding: 10px;
+
+}
+
+#view-header {
+
+    position: relative;
+    width: 100%;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 2em;
+    font-weight: bolder;
+    margin: 0 0 5px 0;
+    color: #555;
+
+}
+
+#view-btns {
+
+    margin-top: 20px;
+    text-align: right;
+
+}
+
+.view-btn {
+
+    border: none;
+    width: 100px;
+    height: 30px;
+    margin: 5px;
+
+}
+
+#view-submit {
+
+
+}
+
+#view-table {
+
+    border-collapse: collapse;
+
+}
+
+#view-header-text {
+
+    display: inline-block;
+    width: 200px;
+    height: auto;
+    line-height: 40px;
+    width: 460px;
+
+}
+
+.view-text {
+
+    width: 125px;
+    border: 1px solid #eee;
+    line-height: 20px;
+
+}

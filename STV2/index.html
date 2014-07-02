@@ -64,6 +64,76 @@
             </div>
             <div id="edit-bg"></div>
         </div>
+        <div id="view-overlay" ng-class="{'view-show': !viewhide, 'view-hide': viewhide }">
+            <div id="view-wrapper">
+                <div id="view-center-div">
+                    <div id="view-header">
+                        <div id="view-header-text">View Options</div>
+                    </div>
+                    <table id="view-table">
+                        <tr>
+                            <th class="view-th">Host Attribute</th>
+                            <th class="view-th">Show/Hide</th>
+                        </tr>
+                        <tr>
+                            <td class="view-td">IP Address</td>
+                            <td class="view-td"><input type="checkbox" value="true" ng-model="viewIp"></td>
+                        </tr>
+                        <tr>
+                            <td class="view-td">Hostname</td>
+                            <td class="view-td"><input type="checkbox" value="true" ng-model="viewHostname"></td>
+                        </tr>
+                        <tr>
+                            <td class="view-td">Health</td>
+                            <td class="view-td"><input type="checkbox" value="true" ng-model="viewHealth"></td>
+                        </tr>
+                        <tr>
+                            <td class="view-td">Subnet</td>
+                            <td class="view-td"><input type="checkbox" value="true" ng-model="viewSubnet"></td>
+                        </tr>
+                        <tr>
+                            <td class="view-td">VLAN</td>
+                            <td class="view-td"><input type="checkbox" value="true" ng-model="viewVLAN"></td>
+                        </tr>
+                        <tr>
+                            <td class="view-td">Virtual / Physical</td>
+                            <td class="view-td"><input type="checkbox" value="true" ng-model="viewVP"></td>
+                        </tr>
+                        <tr>
+                            <td class="view-td">Location</td>
+                            <td class="view-td"><input type="checkbox" value="true" ng-model="viewLocation"></td>
+                        </tr>
+                        <tr>
+                            <td class="view-td">Login Details</td>
+                            <td class="view-td"><input type="checkbox" value="true" ng-model="viewLogin"></td>
+                        </tr>
+                        <tr>
+                            <td class="view-td">Services / Applications</td>
+                            <td class="view-td"><input type="checkbox" value="true" ng-model="viewServices"></td>
+                        </tr>
+                        <tr>
+                            <td class="view-td">Added By</td>
+                            <td class="view-td"><input type="checkbox" value="true" ng-model="viewAddedby"></td>
+                        </tr>
+                        <tr>
+                            <td class="view-td">Reserved</td>
+                            <td class="view-td"><input type="checkbox" value="true" ng-model="viewReserved"></td>
+                        </tr>
+                        <tr>
+                            <td class="view-td">Last Up</td>
+                            <td class="view-td"><input type="checkbox" value="true" ng-model="viewLastup"></td>
+                        </tr>
+                        <tr>
+                            <td class="view-td">Date Added</td>
+                            <td class="view-td"><input type="checkbox" value="true" ng-model="viewDateadded"></td>
+                        </tr>
+                    </table>
+                    <div id="view-btns">
+                        <input type="submit" id="view-submit" class="view-btn" value="Save" ng-click="view()">
+                    </div>
+                </div>
+            </div> 
+        </div>    
     </div>
     <div id="page-wrapper">
         <table id="wrapper">
@@ -154,6 +224,9 @@
                                 <tr><td><input name="addBtn" ng-model="addBtn" class="addBtn button-class" type="submit" value="Add Host" ng-click="add()"></td></tr>
                             </table>
                         </form>
+                    </div>
+                    <div id="view">
+                        <input type="button" value="View Options" ng-click="viewOptions()" id="viewbtn" class="button-class">
                     </div>
 
                 </div>

@@ -55,6 +55,19 @@ app.controller('servList', function($scope, $http, $templateCache) {
 
     };
 
+    $scope.view = function() {
+
+        $scope.viewhide = false;
+
+    };
+
+    $scope.viewhide = function () {
+
+        $scope.viewhide = ($scope.viewhide) ? false : true;
+        return $scope.viewhide;
+
+    };
+
     $scope.saveEdit = function () {
 
         date = new Date().toJSON().slice(0,10);
@@ -356,7 +369,7 @@ app.filter('unique', function() {
         var unique = {};
         var uniqueList = [];
         for(var i = 0; i < input.length; i++){
-            if(typeof unique[input[i][key]] == "undefined"){
+            else (typeof unique[input[i][key]] == "undefined"){
                 unique[input[i][key]] = "";
                 uniqueList.push(input[i]);
             }
