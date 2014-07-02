@@ -77,55 +77,55 @@
                         </tr>
                         <tr>
                             <td class="view-td"><center>IP Address</center></td>
-                            <td class="view-td"><center><button class="button-class" ng-model="viewIp" ng-click="hidebtn($event)">Show / Hide</button></center></td>
+                            <td class="view-td"><center><button class="button-class" ng-model="viewIp" ng-click="iphide = !iphide">Show / Hide</button></center></td>
                         </tr>
                         <tr>
                             <td class="view-td"><center>Hostname</center></td>
-                            <td class="view-td"><center><input type="checkbox" value="true" ng-model="viewHostname"></center></td>
+                            <td class="view-td"><center><button class="button-class" ng-model="viewHostname" ng-click="hosthide = !hosthide">Show / Hide</button></center></td>
                         </tr>
                         <tr>
                             <td class="view-td"><center>Health</center></td>
-                            <td class="view-td"><center><input type="checkbox" value="true" ng-model="viewHealth"></center></td>
+                            <td class="view-td"><center><button class="button-class" ng-model="viewHealth" ng-click="healthhide = !healthhide">Show / Hide</button>center></td>
                         </tr>
                         <tr>
                             <td class="view-td"><center>Subnet</center></td>
-                            <td class="view-td"><center><input type="checkbox" value="true" ng-model="viewSubnet"></center></td>
+                            <td class="view-td"><center><button class="button-class" ng-model="viewSubnet" ng-click="subnethide = !subnethide">Show / Hide</button>center></td>
                         </tr>
                         <tr>
                             <td class="view-td"><center>VLAN</center></td>
-                            <td class="view-td"><center><input type="checkbox" value="true" ng-model="viewVLAN"></center></td>
+                            <td class="view-td"><center><button class="button-class" ng-model="viewVLAN" ng-click="vlanhide = !vlanhide">Show / Hide</button>nter></td>
                         </tr>
                         <tr>
                             <td class="view-td"><center>Virtual / Physical</center></td>
-                            <td class="view-td"><center><input type="checkbox" value="true" ng-model="viewVP"></center></td>
+                            <td class="view-td"><center><button class="button-class" ng-model="viewVp" ng-click="vphide = !vphide">Show / Hide</button>er></td>
                         </tr>
                         <tr>
                             <td class="view-td"><center>Location</center></td>
-                            <td class="view-td"><center><input type="checkbox" value="true" ng-model="viewLocation"></center></td>
+                            <td class="view-td"><center><button class="button-class" ng-model="viewLocation" ng-click="locationhide = !locationhide">Show / Hide</button></center></td>
                         </tr>
                         <tr>
                             <td class="view-td"><center>Login Details</center></td>
-                            <td class="view-td"><center><input type="checkbox" value="true" ng-model="viewLogin"></center></td>
+                            <td class="view-td"><center><button class="button-class" ng-model="viewLogin" ng-click="loginhide = !loginhide">Show / Hide</button>enter></td>
                         </tr>
                         <tr>
                             <td class="view-td"><center>Services / Applications</center></td>
-                            <td class="view-td"><center><input type="checkbox" value="true" ng-model="viewServices"></center></td>
+                            <td class="view-td"><center><button class="button-class" ng-model="viewServices" ng-click="serviceshide = !serviceshide">Show / Hide</button></center></td>
                         </tr>
                         <tr>
                             <td class="view-td"><center>Added By</center></td>
-                            <td class="view-td"><center><input type="checkbox" value="true" ng-model="viewAddedby"></center></td>
+                            <td class="view-td"><center><button class="button-class" ng-model="viewAddedby" ng-click="addedbyhide = !addedbyhide">Show / Hide</button>/center></td>
                         </tr>
                         <tr>
                             <td class="view-td"><center>Reserved</center></td>
-                            <td class="view-td"><center><input type="checkbox" value="true" ng-model="viewReserved"></center></td>
+                            <td class="view-td"><center><button class="button-class" ng-model="viewReserved" ng-click="reservedhide = !reservedhide">Show / Hide</button></center></td>
                         </tr>
                         <tr>
                             <td class="view-td"><center>Last Up</center></td>
-                            <td class="view-td"><center><input type="checkbox" value="true" ng-model="viewLastup"></center></td>
+                            <td class="view-td"><center><button class="button-class" ng-model="viewLastup" ng-click="lastuphide = !lastuphide">Show / Hide</button>center></td>
                         </tr>
                         <tr>
                             <td class="view-td"><center>Date Added</center></td>
-                            <td class="view-td"><center><input type="checkbox" value="true" ng-model="viewDateadded"></center></td>
+                            <td class="view-td"><center><button class="button-class" ng-model="viewDateadded" ng-click="dateaddedhide = !dateaddedhide">Show / Hide</button>></center></td>
                         </tr>
                     </table>
                     <div id="view-btns">
@@ -238,7 +238,7 @@
                     <div id="list">
                         <table id="thelist">
                             <tr>
-                                <th class="td-ipaddr">IP Address</th>
+                                <th class="td-ipaddr" ng-class="{ 'ip-show': !iphide, 'ip-hide': iphide }">IP Address</th>
                                 <th class="td-hostname">Hostname</th>
                                 <th class="td-health">Health</th>
                                 <th class="td-subnet">Subnet</th>
