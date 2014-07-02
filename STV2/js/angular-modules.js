@@ -143,15 +143,39 @@ app.controller('servList', function($scope, $http, $templateCache) {
 
     };
 
+    $scope.deleteEdit = function () {
+        var rowData = {
+            ipaddr: $scope.$edit.ipaddr,
+        };
+
+        var delurl = rooturl+"/delete";
+        var jdata = "mydata="+JSON.stringify(rowData);
+        var delmethod = 'POST';
+
+        $http({
+            method: 'POST',
+            data: jdata,
+            url: rooturl+'/delete',
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            cache: $templateCache
+        }).
+        success(function(response) {
+            console.log("success");
+            $scope.codeStatus = response.data;
+            console.log($scope.codeStatus);
+        }).
+        error(function(response){
+            console.log("error");
+            $scope.codeStatus = response || "Request failed";
+            console.log($scope.codeStatus);
+        });
+        $scope.list();
+        return false;
+
+    };
+
     $scope.refresh = function () {
-
-
-/*        $scope.search = '';
-        $scope.searchvlan = '';
-        $scope.searchuser = '';
-        $scope.searchvp = '';
-        $scope.searchvirthost = '';
-*/        $scope.list();
+        $scope.list();
         console.log('refreshed the page');
 
     };
