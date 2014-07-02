@@ -243,6 +243,15 @@ app.controller('servList', function($scope, $http, $templateCache) {
 
     };
 
+    $scope.hide = function(i) {
+
+        if (i == "ip") {
+            console.log("ip");
+        };
+
+    };
+
+
     $scope.add = function () {
 
         var ipData = {
