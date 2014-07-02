@@ -528,12 +528,12 @@ th {
 
     /*border: 1px solid blue;*/
     position: relative;
-    width: 600px;
-    height: 500px;
+    width: 300px;
+    height: 650px;
     background-color: #FFF;
     padding: 20px;
     margin-left: 50%;
-    left: -320px;
+    left: -170px;
     box-shadow: 0px 0px 10px 10px rgba(0,0,0,0.15);
 
 }
@@ -577,7 +577,7 @@ th {
 #view-btns {
 
     margin-top: 20px;
-    text-align: left;
+    text-align: right;
 
 }
 
@@ -598,6 +598,7 @@ th {
 #view-table {
 
     border-collapse: collapse;
+    text-align: center;
 
 }
 
