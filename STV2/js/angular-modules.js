@@ -55,7 +55,7 @@ app.controller('servList', function($scope, $http, $templateCache) {
 
     };
 
-    $scope.view = function() {
+    $scope.viewOptions = function() {
 
         $scope.viewhide = false;
 
