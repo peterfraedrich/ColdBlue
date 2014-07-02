@@ -218,6 +218,7 @@ app.controller('servList', function($scope, $http, $templateCache) {
         var resboolean = ["false",$scope.reserved]
 
         var fields = [hname,snet,vlanv,vh,loc,logn,svc,usr,resboolean]
+        console.log(fields)
 
         var i = 0
         for (i in fields) {
