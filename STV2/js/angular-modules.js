@@ -207,25 +207,13 @@ app.controller('servList', function($scope, $http, $templateCache) {
         };
 
         /// check to see if fields are null & fix 
-        var hname = [" ",$scope.hostname]
-        var snet = [" ",$scope.subnet]
-        var vlanv = [" ",$scope.vlan]
-        var vh = [" ",$scope.virthost]
-        var loc = [" ",$scope.location]
-        var logn = [" ",$scope.login]
-        var svc = [" ",$scope.services]
-        var usr = [" ",$scope.user]
-        var resboolean = ["false",$scope.reserved]
+        if ($scope.hostname == null) {
+            $scope.hostname = " "
+        };
 
-        var fields = [hname,snet,vlanv,vh,loc,logn,svc,usr,resboolean]
-        console.log(fields)
-
-        var i = 0
-        for (i in fields) {
-            console.log(i[0],i[1])
-            if (i[1] != null) {
-                i[0] = i[1]
-            };
+        var resboolean = "false"
+        if ($scope.reserved != null) {
+            resboolean = $scope.reserved;
         };
 
         var iplookup = 'mydata='+JSON.stringify(ipData);
