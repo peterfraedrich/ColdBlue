@@ -243,13 +243,15 @@ app.controller('servList', function($scope, $http, $templateCache) {
 
     };
 
-    $scope.hidebtn = function(e) {
+    ///////// HIDE BUTTONS /////////////////
 
-        var elem = angular.element(e.srcElement);
-        console.log($(elem.parent()).serialize());       
-
+    $scope.iphide = function() {
+        $scope.iphide = ($scope.iphide) ? false : true;
+        return $scope.iphide;       
     };
 
+
+    //////////////////////////////////////////
 
     $scope.add = function () {
 
