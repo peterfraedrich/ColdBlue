@@ -271,7 +271,7 @@ app.controller('servList', function($scope, $http, $templateCache) {
                     login: $scope.login,
                     services: $scope.services,
                     user: $scope.user,
-                    reserved: resboolean,
+                    reserved: $scope.reserved,
                     alive: '',
                     added: datetime,
                     health: '100',
