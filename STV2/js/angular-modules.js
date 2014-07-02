@@ -247,8 +247,9 @@ app.controller('servList', function($scope, $http, $templateCache) {
 
     $scope.iphide = function() {
         $scope.iphide = ($scope.iphide) ? false : true;
+        console.log($scope.iphide);
         return $scope.iphide;   
-        console.log($scope.iphide);    
+
     };
 
 
