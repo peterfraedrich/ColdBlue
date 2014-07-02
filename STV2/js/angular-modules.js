@@ -221,6 +221,7 @@ app.controller('servList', function($scope, $http, $templateCache) {
 
         var i = 0
         for (i in fields) {
+            console.log(i[0],i[1])
             if (i[1] != null) {
                 i[0] = i[1]
             };
