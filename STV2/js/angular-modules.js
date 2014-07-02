@@ -383,6 +383,7 @@ app.filter('unique', function() {
 
     $scope.list();
     $scope.hide = true;
+    $scope.viewhide = true;
     
 
 });
