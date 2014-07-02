@@ -522,6 +522,9 @@ th {
     font-size: 0.7em;
     background-attachment: fixed;
 
+    
+    display: none;
+
 }
 
 #view-wrapper {
@@ -629,6 +632,5 @@ th {
 #viewbtn {
 
     width: 85px;
-    text-align: center;
 
 }
