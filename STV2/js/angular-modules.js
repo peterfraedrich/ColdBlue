@@ -243,7 +243,7 @@ app.controller('servList', function($scope, $http, $templateCache) {
 
     };
 
-    $scope.hide = function(e) {
+    $scope.hidebtn = function(e) {
 
         var elem = angular.element(e.srcElement);
         console.log($(elem.parent()).serialize());       
