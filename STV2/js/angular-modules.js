@@ -369,7 +369,7 @@ app.filter('unique', function() {
         var unique = {};
         var uniqueList = [];
         for(var i = 0; i < input.length; i++){
-            else (typeof unique[input[i][key]] == "undefined"){
+            if (typeof unique[input[i][key]] == "undefined"){
                 unique[input[i][key]] = "";
                 uniqueList.push(input[i]);
             }
