@@ -243,10 +243,10 @@ app.controller('servList', function($scope, $http, $templateCache) {
 
     };
 
-    $scope.hide = function(hidevar) {
+    $scope.hide = function(i) {
 
-        if (i == "ip") {
-            console.log("ip");
+        if (i == "IP") {
+            console.log("IP")
         };
 
     };
