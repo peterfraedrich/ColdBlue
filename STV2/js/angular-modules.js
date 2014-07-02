@@ -243,11 +243,10 @@ app.controller('servList', function($scope, $http, $templateCache) {
 
     };
 
-    $scope.hide = function(i) {
+    $scope.hide = function(e) {
 
-        if (i == IP) {
-            console.log("IP")
-        };
+        var elem = angular.element(e.srcElement);
+        console.log($(elem.parent()).serialize());       
 
     };
 
