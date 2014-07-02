@@ -206,6 +206,12 @@ app.controller('servList', function($scope, $http, $templateCache) {
             ipaddr: $scope.ipaddr,
         };
 
+        /* check to see if reserved is null */
+        var resboolean = "false"
+        if ($scope.reserved != null) {
+            resboolean = $scope.reserved;
+        };
+
         var iplookup = 'mydata='+JSON.stringify(ipData);
 
         console.log(iplookup);
@@ -242,10 +248,10 @@ app.controller('servList', function($scope, $http, $templateCache) {
                     login: $scope.login,
                     services: $scope.services,
                     user: $scope.user,
-                    reserved: $scope.reserved,
+                    reserved: resboolean,
                     alive: '',
                     added: datetime,
-                    health: '100%',
+                    health: '100',
                     ping: '0',
                     pingfail: '0',
                     lastscan: '',
