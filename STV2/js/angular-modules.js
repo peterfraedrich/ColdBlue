@@ -210,10 +210,29 @@ app.controller('servList', function($scope, $http, $templateCache) {
         if ($scope.hostname == null) {
             $scope.hostname = " "
         };
-
-        var resboolean = "false"
-        if ($scope.reserved != null) {
-            resboolean = $scope.reserved;
+        if ($scope.subnet == null) {
+            $scope.subnet = " "
+        };
+        if ($scope.vlan == null) {
+            $scope.vlan = " "
+        };
+        if ($scope.virthost == null) {
+            $scope.virthost = " "
+        };
+        if ($scope.location == null) {
+            $scope.location = " "
+        };
+        if ($scope.login == null) {
+            $scope.login = " "
+        };
+        if ($scope.services == null) {
+            $scope.services = " "
+        };
+        if ($scope.user == null) {
+            $scope.user = " "
+        };
+        if ($scope.reserved == null) {
+            $scope.reserved = "false"
         };
 
         var iplookup = 'mydata='+JSON.stringify(ipData);

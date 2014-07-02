@@ -58,7 +58,7 @@
             <div id="edit-buttons">
                 <input type="submit" id="edit-button-save" class="edit-button-style button-class" ng-click="saveEdit()" value="Save">
                 <input type="button" id="edit-button-canel" class="edit-button-style button-class" ng-click="hide = !hide" value="Cancel"><br>
-                <input type="button" id="edit-button-delete" class="edit-button-style button-class" ng-click="delete()" value="Delete">
+                <input type="button" id="edit-button-delete" class="edit-button-style button-class" ng-click="delete(row)" value="Delete">
             </div>
             </div>
             </div>
@@ -137,7 +137,7 @@
                             <table id="add-tbl">
                                 <tr><td class="sidebar-header">Add A Host</td></tr>
                                 <tr><td><input name="ipaddr" ng-model="ipaddr" type="text" class="add-text" placeholder="IP Address"></td></tr>
-                                <tr><td><input type="hidden" name="hostname" ng-model="hostname" value="-"><input name="hostname" ng-model="hostname" type="text" class="add-text" placeholder="Hostname"></tr></td>
+                                <tr><td><input name="hostname" ng-model="hostname" type="text" class="add-text" placeholder="Hostname"></tr></td>
                                 <tr><td><input name="subnet" ng-model="subnet" type="text" class="add-text" placeholder="Subnet (ex. 255.255.0.0)"></tr></td>
                                 <tr><td><input name="vlan" ng-model="vlan" type="text" class="add-text" placeholder="VLAN"></tr></td>
                                 <tr><td>Virt/Phys
