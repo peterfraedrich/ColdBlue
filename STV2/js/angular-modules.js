@@ -15,7 +15,7 @@ app.config(['$httpProvider', function($httpProvider) {
 app.controller('servList', function($scope, $http, $templateCache) {
 
     var method = 'POST';
-    var rooturl = 'http://10.2.134.200:666';
+    var rooturl = 'http://192.168.1.100:666';
     var oip = '';
 
     $scope.codeStatus = "";
@@ -206,10 +206,24 @@ app.controller('servList', function($scope, $http, $templateCache) {
             ipaddr: $scope.ipaddr,
         };
 
-        /* check to see if reserved is null */
-        var resboolean = "false"
-        if ($scope.reserved != null) {
-            resboolean = $scope.reserved;
+        /// check to see if fields are null & fix 
+        var hname = [" ",$scope.hostname]
+        var snet = [" ",$scope.subnet]
+        var vlanv = [" ",$scope.vlan]
+        var vh = [" ",$scope.virthost]
+        var loc = [" ",$scope.location]
+        var logn = [" ",$scope.login]
+        var svc = [" ",$scope.services]
+        var usr = [" ",$scope.user]
+        var resboolean = ["false",$scope.reserved]
+
+        var fields = [hname,snet,vlanv,vh,loc,logn,svc,usr,resboolean]
+
+        var i = 0
+        for (i in fields) {
+            if (i[1] != null) {
+                i[0] = i[1]
+            };
         };
 
         var iplookup = 'mydata='+JSON.stringify(ipData);
