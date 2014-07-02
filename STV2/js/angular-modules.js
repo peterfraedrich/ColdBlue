@@ -70,7 +70,7 @@ app.controller('servList', function($scope, $http, $templateCache) {
 
     $scope.viewSave = function() {
 
-        $scope.viewhide();
+        $scope.viewhide = true;
 
     };
 
