@@ -619,3 +619,15 @@ th {
     line-height: 20px;
 
 }
+
+#view {
+
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+#viewbtn {
+
+    width: 175px;
+
+}
