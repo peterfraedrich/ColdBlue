@@ -22,7 +22,6 @@ app.controller('servList', function($scope, $http, $templateCache) {
 
     // list hosts
     $scope.list = function() {
-        setTimeout(function(),1000);
         var url = rooturl+'/get';
         $http.get(url).then(function(res) {
             $scope.servers = res.data;
