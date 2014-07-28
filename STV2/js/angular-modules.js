@@ -2,7 +2,7 @@
 
 // ======== INIT APP ===================//
 
-var app = angular.module('stv', []);
+var app = angular.module('stv', ['ui']);
 
 app.config(['$httpProvider', function($httpProvider) {
     $httpProvider.defaults.useXDomain = true;
