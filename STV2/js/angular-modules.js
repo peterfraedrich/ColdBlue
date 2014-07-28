@@ -22,6 +22,7 @@ app.controller('servList', function($scope, $http, $templateCache) {
 
     // list hosts
     $scope.list = function() {
+        setTimeout(10);
         var url = rooturl+'/get';
         $http.get(url).then(function(res) {
             $scope.servers = res.data;
@@ -380,7 +381,7 @@ app.filter('unique', function() {
         return uniqueList;
 
     };
-    
+
 });
 
 
