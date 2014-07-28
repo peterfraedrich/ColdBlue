@@ -65,7 +65,7 @@
         mode: 'JSON',
         pythonPath: '/usr/bin/python',
       };
-      var shell = new py('./scripts/check_host.py', options,);
+      var shell = new py('./scripts/check_host.py', options);
       shell.send(jsonData.ipaddr);
       shell.on('message', function (message) {
         if (jsonData.hostname == "") {
