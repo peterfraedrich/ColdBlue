@@ -2,7 +2,7 @@
 
 // ======== INIT APP ===================//
 
-var app = angular.module('stv', ['ui']);
+var app = angular.module('stv');
 
 app.config(['$httpProvider', function($httpProvider) {
     $httpProvider.defaults.useXDomain = true;
@@ -12,7 +12,7 @@ app.config(['$httpProvider', function($httpProvider) {
 
 // ========= CONTROLLERS =================//
 
-app.controller('servList', function($scope, $http, $templateCache) {
+app.controller('servList', ['$scope','$http','$templateCache','$timeout'], function($scope, $http, $templateCache, $timeout) {
 
     var method = 'POST';
     var rooturl = 'http://192.168.1.100:666';
