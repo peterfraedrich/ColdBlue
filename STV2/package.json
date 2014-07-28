@@ -15,7 +15,7 @@
     "method-override": "~1.0.0",
     "mongodb": "*",
     "errorhandler": "~1.0.0",
-    "connect": "*",
+    "connect": "~1.0.0",
     "mongojs": "*",
     "python-shell": "*"
   }
