@@ -22,13 +22,16 @@ app.controller('servList', function($scope, $http, $templateCache) {
 
     // list hosts
     $scope.list = function() {
-        $timeout(function(), 1000);
+        $timeout($scope.nothing(), 1000)
         var url = rooturl+'/get';
         $http.get(url).then(function(res) {
             $scope.servers = res.data;
         });
     };
      
+    $scope.nothing = function() {
+
+    };
 
     $scope.edit = function(row) {
 
