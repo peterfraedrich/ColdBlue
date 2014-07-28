@@ -366,7 +366,7 @@ app.controller('servList', ['$scope','$http','$templateCache','$timeout', functi
 
         });
 
-        $timeout($scope.list(), 1000);
+        setTimeout($scope.list(), 1000);
    
     };
 
