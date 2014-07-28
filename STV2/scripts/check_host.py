@@ -49,6 +49,6 @@ hostname = hostname_long[0]
 
 print hostname ### DEBUG
 
-stdout = sys.stdout.write(ip + ',' + hostname + ',' + alive)
+stdout = sys.stdout.write('{ ip:"'+ip+'",hostname:"'+hostname+'",alive:"'+alive+'"}')
 
 exit()
