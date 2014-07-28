@@ -10,7 +10,7 @@
         methodOverride = require('method-override'),
         errorhandler = require('errorhandler'),
             path = require('path');
-            var databaseUrl = 'db.asti-usa.com:27017/stv2';
+            var databaseUrl = '192.168.1.98/stv2';
     var collections = ['hosts'];
     var db = require('mongojs').connect(databaseUrl, collections);
         var app = express();
@@ -26,13 +26,13 @@
 // ================ API ================== //
 
     app.get('/api', function (req, res) {
-        res.send('Our Sample API is up...');
+        res.send('the server is running and the API is up');
 
     });
 
 //// GET HOSTS
     app.get('/get', function (req, res) {
-        console.log("GET: ");
+        console.log("GET: hosts from " + databaseUrl);
         res.header("Access-Control-Allow-Origin", "*");
         res.header("Access-Control-Allow-Methods", "*");
         db.hosts.find('', function(err, ipaddr) { 
@@ -55,7 +55,7 @@
 
 //// ADD
     app.post('/add', function (req, res) {
-      console.log("POST: ");
+      console.log("POST: new record to DB");
       res.header("Access-Control-Allow-Origin", "*");
       res.header("Access-Control-Allow-Methods", "*");
       // console.log(req.body);
@@ -70,7 +70,7 @@
 
 //// SAVE
     app.post('/save', function (req, res){
-        console.log("EDIT: ");
+        console.log("EDIT: change record info");
         res.header("Access-Control-Allow-Origin", "*");
            res.header("Access-Control-Allow-Methods", "*");
            // console.log(req.body);
@@ -89,7 +89,7 @@
 
 //// RESET STATS
     app.post('/reset', function (req, res){
-        console.log("RESET: ");
+        console.log("RESET: clear record stats");
         res.header("Access-Control-Allow-Origin", "*");
            res.header("Access-Control-Allow-Methods", "*");
            // console.log(req.body);
@@ -105,7 +105,7 @@
 
 //// DELETE
     app.post('/delete', function (req, res) {
-        console.log("DELETE: ");
+        console.log("DELETE: delete record from DB");
         res.header("Access-Control-Allow-Origin", "*");
         res.header("Access-Control-Allow-Methods", "*");
         console.log(req.body.mydata);
@@ -117,7 +117,7 @@
 
 //// LOOKUP
     app.post('/lookup', function (req, res) {
-        console.log('LOOKUP: ');
+        console.log('LOOKUP: lookup IP');
         res.header("Access-Control-Allow-Origin", "*");
         res.header("Access-Control-Allow-Methods", "*");
         var lookup = req.body.mydata;
