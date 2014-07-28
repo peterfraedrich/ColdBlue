@@ -12,7 +12,7 @@ app.config(['$httpProvider', function($httpProvider) {
 
 // ========= CONTROLLERS =================//
 
-app.controller('servList', ['$scope', '$timeout', '$http', '$templateChache', function($scope, $timeout, $http, $templateCache) {
+app.controller('servList', ['$scope', '$timeout', '$http', '$templateCache', function($scope, $timeout, $http, $templateCache) {
 
     var method = 'POST';
     var rooturl = 'http://192.168.1.100:666';
