@@ -22,7 +22,7 @@ app.controller('servList', function($scope, $http, $templateCache) {
 
     // list hosts
     $scope.list = function() {
-
+        setTimeout(function(),1000);
         var url = rooturl+'/get';
         $http.get(url).then(function(res) {
             $scope.servers = res.data;
@@ -341,7 +341,6 @@ app.controller('servList', function($scope, $http, $templateCache) {
                     console.log("success");
                     $scope.codeStatus = response.data;
                     console.log($scope.codeStatus);
-                    $scope.list();
                 }).
                 error(function(response){
                     console.log("error");
