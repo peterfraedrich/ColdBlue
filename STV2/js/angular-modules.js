@@ -280,6 +280,9 @@ app.controller('servList', function($scope, $http, $templateCache) {
         if ($scope.reserved == null) {
             $scope.reserved = "false"
         };
+        if ($scope.reserved == "true") {
+            $scope.health == "reserved"
+        };
 
         var iplookup = 'mydata='+JSON.stringify(ipData);
 
@@ -320,7 +323,7 @@ app.controller('servList', function($scope, $http, $templateCache) {
                     reserved: $scope.reserved,
                     alive: '',
                     added: datetime,
-                    health: '100',
+                    health: $scope.health,
                     ping: '0',
                     pingfail: '0',
                     lastscan: '',

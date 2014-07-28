@@ -14,6 +14,7 @@
     var collections = ['hosts'];
     var db = require('mongojs').connect(databaseUrl, collections);
         var app = express();
+    var py = require('PythonShell')
   
 // ================ CONFIG ========================= //
    

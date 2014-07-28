@@ -16,7 +16,8 @@
     "mongodb": "*",
     "errorhandler": "~1.0.0",
     "connect": "*",
-    "mongojs": "*"
+    "mongojs": "*",
+    "PythonShell": "*"
   }
 }
 
