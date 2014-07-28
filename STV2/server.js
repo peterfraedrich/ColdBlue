@@ -14,7 +14,6 @@
     var collections = ['hosts'];
     var db = require('mongojs').connect(databaseUrl, collections);
         var app = express();
-    var py = require('python-shell')
   
 // ================ CONFIG ========================= //
    
@@ -61,19 +60,6 @@
       // console.log(req.body);
       // console.log(req.body.mydata);
       var jsonData = JSON.parse(req.body.mydata);
-      var options = {
-        mode: 'JSON',
-        pythonPath: '/usr/bin/python',
-      };
-      var shell = new py('./scripts/check_host.py', options);
-      shell.send(jsonData.ipaddr);
-      shell.on('message', function (message) {
-        if (jsonData.hostname == "") {
-          jsonData.hostname = message.hostname;
-        };
-        jsonData.health = message.health;        
-      });
-
       db.hosts.save({hostname: jsonData.hostname, ipaddr: jsonData.ipaddr, subnet: jsonData.subnet, vlan: jsonData.vlan, vp: jsonData.vp, virthost: jsonData.virthost, location: jsonData.location, login: jsonData.login, services: jsonData.services, user: jsonData.user, reserved: jsonData.reserved, alive: jsonData.alive, added: jsonData.added, health: jsonData.health, ping: jsonData.ping, pingfail: jsonData.pingfail, lastscan: jsonData.lastscan, tidyflag: jsonData.tidyflag, lastalive: jsonData.lastalive},
            function(err, saved) {
                if( err || !saved ) res.end( "server not saved"); 
