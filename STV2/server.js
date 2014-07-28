@@ -31,7 +31,7 @@
 
 //// GET HOSTS
     app.get('/get', function (req, res) {
-        window.setTimeout(function(),1000);
+        setTimeout(function(),1000);
         console.log("GET: hosts from " + databaseUrl);
         res.header("Access-Control-Allow-Origin", "*");
         res.header("Access-Control-Allow-Methods", "*");
