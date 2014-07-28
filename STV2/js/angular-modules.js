@@ -364,6 +364,7 @@ app.controller('servList', function($scope, $http, $templateCache) {
 
         });
 
+
         $scope.list(); 
 
     };
