@@ -45,7 +45,6 @@ app.controller('servList', function($scope, $http, $templateCache) {
         $scope.editreserved = row.reserved;
         oip = row.ipaddr;
 
-
     };
 
     $scope.edithide = function () {
@@ -364,7 +363,6 @@ app.controller('servList', function($scope, $http, $templateCache) {
 
         });
 
-
         $scope.list(); 
 
     };
@@ -380,7 +378,9 @@ app.filter('unique', function() {
             }
         }
         return uniqueList;
+
     };
+    
 });
 
 
