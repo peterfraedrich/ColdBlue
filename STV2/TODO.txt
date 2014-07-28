@@ -13,3 +13,8 @@ TO DO:
 - color-coded health statuses
 - change all "undefined" default values to blank values
 - add "domain" field for sorting by multiple domains, make domain default sort (?)
+
+- ADD DNS TO TABLE
+- DNS LOOKUP FOR MANUAL ENTRY
+- fix health status
+- python modules lol

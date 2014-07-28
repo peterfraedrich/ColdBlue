@@ -259,10 +259,9 @@ app.controller('servList', function($scope, $http, $templateCache) {
         if ($scope.vlan == null) {
             $scope.vlan = ""
         };
-        if ($scope.vp == null) {
+        if ($scope.vp != "virtual") {
             $scope.vp = "physical"
         };
-        
         if ($scope.virthost == null) {
             $scope.virthost = ""
         };
