@@ -280,9 +280,6 @@ app.controller('servList', function($scope, $http, $templateCache) {
         if ($scope.reserved == null) {
             $scope.reserved = "false"
         };
-        if ($scope.reserved == "true") {
-            $scope.health == "reserved"
-        };
 
         var iplookup = 'mydata='+JSON.stringify(ipData);
 
