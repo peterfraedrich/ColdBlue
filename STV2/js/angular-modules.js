@@ -12,7 +12,7 @@ app.config(['$httpProvider', function($httpProvider) {
 
 // ========= CONTROLLERS =================//
 
-app.controller('servList', ['$scope','$http','$templateCache','$timeout', function($scope, $http, $templateCache, $timeout) {
+app.controller('servList', ['$timeout', function($scope, $http, $templateCache) {
 
     var method = 'POST';
     var rooturl = 'http://192.168.1.100:666';
@@ -366,8 +366,8 @@ app.controller('servList', ['$scope','$http','$templateCache','$timeout', functi
 
         });
 
-        $timeout($scope.list(), 1000) 
-
+        $timeout($scope.list(), 1000);
+   
     };
 
 app.filter('unique', function() {
