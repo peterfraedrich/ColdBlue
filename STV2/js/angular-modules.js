@@ -359,13 +359,12 @@ app.controller('servList', function($scope, $http, $templateCache) {
                 $scope.location = '';
                 $scope.login = '';
                 $scope.reserved = false;  
-
-                $scope.list();              
-
-
+                        
             };
 
         });
+
+        $scope.list(); 
 
     };
 
