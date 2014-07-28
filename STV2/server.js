@@ -145,7 +145,8 @@
 
 // ============= LISTEN ==================== //
 
-connect().use(connect.static(__dirname + '/')).listen(80);
+connect ()
+  .use(connect.static(__dirname)).listen(80);
 console.log('Server listening on port 80');
 app.listen(666);
 console.log('API listening on port 666');
