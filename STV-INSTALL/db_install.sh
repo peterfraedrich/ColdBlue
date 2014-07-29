@@ -17,22 +17,22 @@ read iarch
 echo $iarch
 
 if [ $iarch == "1" ]; then
-	# add mongodb to yum repo
-	cat > /etc/yum.repos.d/mongodb.repo << EOF
-	[mongodb]
-	name=MongoDB Repository
-	baseurl=http://downloads-distro.mongodb.org/repo/redhat/os/x86_64/
-	gpgcheck=0
-	enabled=1
+# add mongodb to yum repo
+cat > /etc/yum.repos.d/mongodb.repo << EOF
+[mongodb]
+name=MongoDB Repository
+baseurl=http://downloads-distro.mongodb.org/repo/redhat/os/x86_64/
+gpgcheck=0
+enabled=1
 EOF
 elif [ $iarch == "2" ]; then
-	# add mongodb to yum repo
-	cat > /etc/yum.repos.d/mongodb.repo << EOF
-	[mongodb]
-	name=MongoDB Repository
-	baseurl=http://downloads-distro.mongodb.org/repo/redhat/os/i686/
-	gpgcheck=0
-	enabled=1
+# add mongodb to yum repo
+cat > /etc/yum.repos.d/mongodb.repo << EOF
+[mongodb]
+name=MongoDB Repository
+baseurl=http://downloads-distro.mongodb.org/repo/redhat/os/i686/
+gpgcheck=0
+enabled=1
 EOF
 else
 	echo "Invalid choice, exiting."
