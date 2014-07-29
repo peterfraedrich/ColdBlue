@@ -16,7 +16,7 @@ echo -n "Select a system arch: [1] x86_64, [2] i686: "
 read iarch
 echo $iarch
 
-if [ $iarch == 1 ]; then
+if [ $iarch == "1" ]; then
 	# add mongodb to yum repo
 	cat > /etc/yum.repos.d/mongodb.repo << EOF
 	[mongodb]
@@ -24,8 +24,8 @@ if [ $iarch == 1 ]; then
 	baseurl=http://downloads-distro.mongodb.org/repo/redhat/os/x86_64/
 	gpgcheck=0
 	enabled=1
-	EOF
-elif [ $iarch == 2 ]; then
+
+elif [ $iarch == "2" ]; then
 	# add mongodb to yum repo
 	cat > /etc/yum.repos.d/mongodb.repo << EOF
 	[mongodb]
@@ -33,11 +33,13 @@ elif [ $iarch == 2 ]; then
 	baseurl=http://downloads-distro.mongodb.org/repo/redhat/os/i686/
 	gpgcheck=0
 	enabled=1
-	EOF
+
 else
 	echo "Invalid choice, exiting."
 	exit 1
 fi
+
+EOF
 
 # install MongoDB
 yum install -y mongodb-org
